@@ -16,8 +16,9 @@ function Time(){
         seconds = "0" + seconds;
     }
 
-    document.getElementById('time').innerHTML = "#" + hours + minutes + seconds;
-    document.body.style.backgroundColor = "#" + hours + minutes + seconds;
+    var clock = "#" + hours + minutes + seconds;
+    document.getElementById('time').innerHTML = clock;
+    document.body.style.backgroundColor = clock;
 }
 
-setInterval(Time, 10);
+setInterval(Time, 1000);
