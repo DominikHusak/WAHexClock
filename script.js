@@ -1,24 +1,41 @@
+var clock;
+
+function Clock(){
+    Time();
+    backgroundColor();
+}
+
 function Time(){
     var date = new Date();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+    var hours;
+var minutes;
+var seconds;
 
-    if(10 >= hours){
-        hours = "0" + hours;
+    if(date.getHours() < 10){
+        hours = "0" + date.getHours();
+    }else {
+        hours = date.getHours();
     }
 
-    if(10 >= minutes){
-        minutes = "0" + minutes;
+    if(date.getMinutes() < 10){
+        minutes = "0" + date.getMinutes();
+    }else {
+        minutes = date.getMinutes();
     }
 
-    if(10 >= seconds){
-        seconds = "0" + seconds;
-    }
-
-    var clock = "#" + hours + minutes + seconds;
+    if(date.getSeconds() < 10){
+        seconds = "0" + date.getSeconds();
+    }else {
+        seconds = date.getSeconds();
+    }   
+    
+    clock = "#" + hours + minutes + seconds
     document.getElementById('time').innerHTML = clock;
+}
+
+function backgroundColor(){
     document.body.style.backgroundColor = clock;
 }
 
-setInterval(Time, 1000);
+Clock();
+setInterval(Clock, 1000);
