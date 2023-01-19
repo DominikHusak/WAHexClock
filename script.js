@@ -8,26 +8,14 @@ function Clock(){
 function Time(){
     var date = new Date();
     var hours;
-var minutes;
-var seconds;
+    var minutes;
+    var seconds;
 
-    if(date.getHours() < 10){
-        hours = "0" + date.getHours();
-    }else {
-        hours = date.getHours();
-    }
+    hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
 
-    if(date.getMinutes() < 10){
-        minutes = "0" + date.getMinutes();
-    }else {
-        minutes = date.getMinutes();
-    }
+    minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
 
-    if(date.getSeconds() < 10){
-        seconds = "0" + date.getSeconds();
-    }else {
-        seconds = date.getSeconds();
-    }   
+    seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
     
     clock = "#" + hours + minutes + seconds
     document.getElementById('time').innerHTML = clock;
